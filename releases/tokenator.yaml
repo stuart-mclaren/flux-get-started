@@ -5,20 +5,16 @@ metadata:
   name: tokenator
   namespace: demo
   annotations:
+    flux.weave.works/automated: "false"
+    flux.weave.works/tag.chart-image: semver:~4.0
 spec:
   releaseName: tokenator
   chart:
-    repository:  https://zing.hpelabs.net/artifactory/staging-charts
-    path: /token-generator-0.0.13-g9a6c5ff671ff44.tgz
+    repository: https://zing.hpelabs.net/artifactory/staging-charts
+    name: token-generator
+    version: 0.0.13-g9a6c5ff671ff44
   values:
     image:
         registry: staging-docker.artifactory.zing.hpelabs.net
         repository: platform-opshq/token-generator
         tag: 0.0.13-g9a6c5ff671ff44
-    persistence:
-      enabled: false
-    resources:
-      requests:
-        memory: 32Mi
-        cpu: 10m
-    serviceType: ClusterIP
