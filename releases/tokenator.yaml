@@ -6,7 +6,7 @@ metadata:
   namespace: demo
   annotations:
 spec:
-  releaseName: ghost
+  releaseName: tokenator
   chart:
     repository:  https://zing.hpelabs.net/artifactory/staging-charts
     path: /token-generator-0.0.13-g9a6c5ff671ff44.tgz
