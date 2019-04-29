@@ -1,0 +1,24 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: tokenator
+  namespace: demo
+  annotations:
+spec:
+  releaseName: ghost
+  chart:
+    repository:  https://zing.hpelabs.net/artifactory/staging-charts
+    path: /token-generator-0.0.13-g9a6c5ff671ff44.tgz
+  values:
+    image:
+        registry: staging-docker.artifactory.zing.hpelabs.net
+        repository: platform-opshq/token-generator
+        tag: 0.0.13-g9a6c5ff671ff44
+    persistence:
+      enabled: false
+    resources:
+      requests:
+        memory: 32Mi
+        cpu: 10m
+    serviceType: ClusterIP
