@@ -1,0 +1,19 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: helloworld
+  namespace: mclaren
+  labels:
+    chart: helloworld
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:stg-*
+spec:
+  releaseName: helloworld
+  chart:
+    git: git@github.com:stuart-mclaren/flux-get-started
+    path: charts/helloworld
+    ref: master
+  values:
+    image: 581310303425.dkr.ecr.us-west-1.amazonaws.com/mclaren/test:stg-1.3.2
+    imagePullPolicy: IfNotPresent
