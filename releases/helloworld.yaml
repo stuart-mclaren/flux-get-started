@@ -15,5 +15,8 @@ spec:
     path: charts/helloworld
     ref: master
   values:
-    image: 581310303425.dkr.ecr.us-west-1.amazonaws.com/mclaren/test:stg-1.3.2
+    image:
+        registry: 581310303425.dkr.ecr.us-west-1.amazonaws.com
+        repository: mclaren/test
+        tag: stg-1.3.2
     imagePullPolicy: IfNotPresent
