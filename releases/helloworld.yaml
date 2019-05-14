@@ -18,4 +18,5 @@ spec:
     image:
         registry: 581310303425.dkr.ecr.eu-west-1.amazonaws.com
         repository: mclaren/test
+        tag: stg-1.3.8
     imagePullPolicy: IfNotPresent
